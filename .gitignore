@@ -1,0 +1,16 @@
+*.swp
+.DS_Store
+*.pdf
+.idea
+*.obj
+*.o
+*.d
+a.out
+webserv
+.vscode/settings.json
+log_*
+webserv.dSYM
+tmp.txt
+body_cgi
+YoupiBanane/put_test/file_should_exist_after
+tmp_cgi

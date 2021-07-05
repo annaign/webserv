@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Webserv default page</title>
+</head>
+
+<body>
+    <h1 align="center">Webserv default page</h1>
+
+    <hr>
+    <div class="root">
+        <div>
+            <h2>PUT test</h2>
+            <p>Do in terminal:</p>
+            <code>telnet 127.0.0.1 1024</code>
+            <br>
+            <code>
+PUT /sample/tmp.txt HTTP/1.1<br>
+Content-Type: text/html<br>
+Content-Length: 15<br>
+<br>
+&lt;p&gt;New file&lt;/p&gt;<br>
+<br>
+</code>
+            <p></p>
+            <a href="/sample/">Go to page with autoindex</a>
+        </div>
+        <div>
+            <h2>PUT chunk test</h2>
+            <p>Do in terminal:</p>
+            <code>telnet 127.0.0.1 1024</code>
+            <br>
+            <code>
+PUT /sample/chunk.html HTTP/1.1<br>
+Content-Type: text/html<br>
+Transfer-Encoding: chunked<br>
+<br>
+10<br>
+&lt;p&gt;Put chunk&lt;/p&gt;<br>
+11<br>
+&lt;p&gt;Put chunk2&lt;/p&gt;<br>
+0<br>
+<br>
+</code>
+            <p></p>
+            <a href="/sample/">Go to page with autoindex</a>
+        </div>
+    </div>
+
+    <hr>
+    <div class="root">
+        <div>
+            <h2>"alias" test</h2>
+            <a href="/alias/">Go to alias</a>
+        </div>
+
+        <div>
+            <h2>"root" test</h2>
+            <a href="/root/">Go to root</a>
+        </div>
+
+        <div>
+            <h2>"autoindex" test</h2>
+            <a href="/sample/">Go to page with autoindex</a>
+        </div>
+
+        <div>
+            <h2>"error" test</h2>
+            <a href="/nothing/">Go to not exist page</a>
+        </div>
+    </div>
+
+    <hr>
+
+</body>
+
+</html>

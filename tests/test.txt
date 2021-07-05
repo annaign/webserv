@@ -1,0 +1,20 @@
+# http://manpages.ubuntu.com/manpages/trusty/man1/siege.1.html
+# -с20 20 клиентов делают запросы
+# -t120s - время работы 120 секунд
+siege --benchmark -c20 -t120s http://127.0.0.1:1024
+
+# https://curl.se/docs/manpage.html#--resolve
+# setup multiple servers with different host name
+curl --resolve example.com:1025:127.0.0.1 http://example.com:1025
+curl --resolve localhost:1024:127.0.0.1 http://localhost:1024
+
+# limit the client body
+curl -X POST -H "Content-Type: plain/text" --data "Something longer than body limit" http://127.0.0.1:1024/sample/
+curl -X POST -H "Content-Type: plain/text" --data "short" http://127.0.0.1:1024/sample/
+curl -X PUT -H "Content-Type: plain/text" --data "1234567" http://127.0.0.1:1024/sample/tmp.txt
+
+# setup a list of method accepted for a certain route
+# HEAD
+curl -I http://127.0.0.1:1025/head/
+# GET
+curl -D - http://127.0.0.1:1025/head/
