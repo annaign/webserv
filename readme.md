@@ -1,6 +1,6 @@
 # Webserv
 
-Own HTTP server.
+Simple HTTP server.
 
 ## Build and run the project
 
